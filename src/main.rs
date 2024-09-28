@@ -51,6 +51,7 @@ fn main() {
                 obs_data.trials.push(elapsed);
             }
         }
+
         bs_data.size = *size;
         bs_data.average /= trials as f64;
         bubble_sort_data.push(bs_data);
