@@ -17,7 +17,7 @@ fn main() {
 
     for size in &sizes {
         println!("Now on Vectors with size: {}", size);
-        let mut arr: Vec<i32> = (0..=*size).collect();
+        let mut arr: Vec<i32> = (1..=*size).collect();
         arr.shuffle(&mut thread_rng());
 
         let mut bs_data = Data {
