@@ -15,9 +15,9 @@ fn main() {
     let sizes = [100, 1000, 10000];
     let trials = 5;
 
-    for size in &sizes {
+    for size in sizes {
         println!("Vector size: {}", size);
-        let mut arr: Vec<i32> = (1..=*size).collect();
+        let mut arr: Vec<i32> = (1..=size).collect();
         arr.shuffle(&mut thread_rng());
 
         let mut bs_data = Data {
@@ -52,11 +52,11 @@ fn main() {
             }
         }
 
-        bs_data.size = *size;
+        bs_data.size = size;
         bs_data.average /= trials as f64;
         bubble_sort_data.push(bs_data);
 
-        obs_data.size = *size;
+        obs_data.size = size;
         obs_data.average /= trials as f64;
         optimized_bubble_sort_data.push(obs_data);
     }
